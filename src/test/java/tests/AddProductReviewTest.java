@@ -2,7 +2,6 @@ package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import pages.HomePage;
 import pages.LoginPage;
 import pages.ProductDetailsPage;
@@ -10,6 +9,7 @@ import pages.ProductReviewPage;
 import pages.SearchPage;
 import pages.UserRegistrationPage;
 
+@Test
 public class AddProductReviewTest extends TestBase
 {
 
@@ -29,7 +29,6 @@ public class AddProductReviewTest extends TestBase
 	ProductReviewPage reviewObject ; 
 
 	// 1- User Registration 
-	@Test(priority=1,alwaysRun=true)
 	public void UserCanRegisterSuccssfully() 
 	{
 		homeObject = new HomePage(driver); 
@@ -40,7 +39,6 @@ public class AddProductReviewTest extends TestBase
 	}
 
 	// 2- Search For Product
-	@Test(priority=2)
 	public void UserCanSearchWithAutoSuggest() 
 	{
 		try {
@@ -54,7 +52,6 @@ public class AddProductReviewTest extends TestBase
 	}
 
 	// 3- Add review
-	@Test(priority=3)
 	public void RegisteredUserCanReviewProduct() 
 	{
 		detailsObject.openAddReviewPage();
@@ -65,7 +62,6 @@ public class AddProductReviewTest extends TestBase
 	}
 
 	// 4- User Logout
-	@Test(priority=4)
 	public void RegisteredUserCanLogout() 
 	{
 		registerObject.userLogout();
